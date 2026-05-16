@@ -1,65 +1,208 @@
-import Image from "next/image";
+import Link from 'next/link'
+import GalleryCarousel from '@/components/GalleryCarousel'
 
 export default function Home() {
+
+  const weddingDate = new Date('2027-08-21T16:00:00')
+  const today = new Date()
+
+  const diff = weddingDate.getTime() - today.getTime()
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-rose-50 text-zinc-800">
+
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
+
+        {/* CONTAGEM */}
+        <div className="bg-white rounded-3xl shadow-md px-10 py-6 mb-10">
+          <p className="text-sm uppercase tracking-widest text-zinc-500 mb-2">
+            Faltam
+          </p>
+
+          <h2 className="text-5xl font-bold text-rose-500">
+            {days}
+          </h2>
+
+          <p className="text-zinc-600 mt-2">
+            dias para o grande dia
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <p className="uppercase tracking-[0.3em] text-sm text-rose-500 mb-4">
+          Nosso Casamento
+        </p>
+
+        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          Rodrigo & Isabella
+        </h1>
+
+        <p className="max-w-xl text-lg text-zinc-600 mb-10">
+          Estamos muito felizes em compartilhar esse momento especial com você.
+        </p>
+
+
+
+        {/* BOTÕES */}
+        <div className="flex gap-4 flex-wrap justify-center">
+
+          <Link
+            href="/rsvp"
+            className="bg-rose-500 hover:bg-rose-600 transition text-white px-6 py-3 rounded-full"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Confirmar Presença
+          </Link>
+
+          <Link
+            href="/gifts"
+            className="border border-rose-500 text-rose-500 hover:bg-rose-100 transition px-6 py-3 rounded-full"
           >
-            Documentation
-          </a>
+            Lista de Presentes
+          </Link>
+
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* GALERIA */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Nossa História
+        </h2>
+
+        <GalleryCarousel />
+
+      </section>
+
+      {/* CRONOGRAMA */}
+      <section className="bg-white py-24 px-6">
+
+        <div className="max-w-3xl mx-auto">
+
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Cronograma
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            <div className="border-l-4 border-rose-500 pl-6">
+              <p className="text-sm text-zinc-500">
+                16:00
+              </p>
+
+              <h3 className="text-2xl font-semibold">
+                Cerimônia
+              </h3>
+
+              <p className="text-zinc-600">
+                Igreja Exemplo
+              </p>
+            </div>
+
+            <div className="border-l-4 border-rose-500 pl-6">
+              <p className="text-sm text-zinc-500">
+                18:00
+              </p>
+
+              <h3 className="text-2xl font-semibold">
+                Recepção
+              </h3>
+
+              <p className="text-zinc-600">
+                Espaço de Eventos Exemplo
+              </p>
+            </div>
+
+            <div className="border-l-4 border-rose-500 pl-6">
+              <p className="text-sm text-zinc-500">
+                23:00
+              </p>
+
+              <h3 className="text-2xl font-semibold">
+                Encerramento
+              </h3>
+
+              <p className="text-zinc-600">
+                Última música 😄
+              </p>
+            </div>
+
+            <div className="border-l-4 border-rose-500 pl-6">
+              <p className="text-sm text-zinc-500">
+                16:00
+              </p>
+
+              <h3 className="text-2xl font-semibold">
+                Cerimônia
+              </h3>
+
+              <p className="text-zinc-600">
+                Igreja Exemplo
+              </p>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL */}
+      <section className="py-10 px-6 bg-rose-50">
+
+        <div className="max-w-6xl mx-auto">
+
+          <h2 className="text-4xl font-bold text-center mb-4">
+            Local do Evento
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+
+            {/* INFORMAÇÕES */}
+            <div className='text-center'>
+
+              <h4 className="text-2xl font-semibold mb-6">
+                Espaço Delícia Buffet
+              </h4>
+
+              <p className="text-zinc-600 mb-4">
+                Alameda dos Jequitibás, 750 - Mairiporã, SP, 07600-000
+              </p>
+
+              <a
+                href="https://www.google.com/maps/place/Espa%C3%A7o+Del%C3%ADcia+Buffet/@-23.3807198,-46.6231293,17z/data=!3m1!4b1!4m6!3m5!1s0x94cef6f5f1e765ed:0x23f6f5d75afb353a!8m2!3d-23.3807198!4d-46.6231293!16s%2Fg%2F11b69y_lyz?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                className="inline-block bg-rose-500 hover:bg-rose-600 transition text-white px-6 py-3 rounded-full"
+              >
+                Como chegar
+              </a>
+
+            </div>
+
+            {/* MAPA */}
+            <div className="rounded-3xl overflow-hidden shadow-xl h-[400px]">
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.2072168953255!2d-46.623129299999995!3d-23.380719799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef6f5f1e765ed%3A0x23f6f5d75afb353a!2sEspa%C3%A7o%20Del%C3%ADcia%20Buffet!5e0!3m2!1spt-BR!2sbr!4v1778891529574!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                className="border-0"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-5 text-center text-zinc-500 text-sm">
+        Rodrigo & Isabella • 2027
+      </footer>
+
+    </main>
+  )
 }
