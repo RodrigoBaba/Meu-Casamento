@@ -7,12 +7,42 @@ import 'swiper/css/navigation'
 
 import { Navigation, Autoplay } from 'swiper/modules'
 
+import React from 'react'
+
 const images = [
-  'https://images.unsplash.com/photo-1522673607200-164d1b6ce486',
-  'https://images.unsplash.com/photo-1511285560929-80b456fea0bc',
-  'https://images.unsplash.com/photo-1519741497674-611481863552',
-  'https://images.unsplash.com/photo-1520854221256-17451cc331bf',
-  'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8',
+  '../images/history/0.0.png',
+  '../images/history/0.1.png',
+  '../images/history/0.2.1.png',
+  '../images/history/0.2.png',
+  '../images/history/0.3.png',
+  '../images/history/0.4.png',
+  '../images/history/0.5.png',
+  '../images/history/1.0.png',
+  '../images/history/1.1.png',
+  '../images/history/1.2.png',
+  '../images/history/1.3.png',
+  '../images/history/1.4.png',
+  '../images/history/2.0.1.png',
+  '../images/history/2.0.png',
+  '../images/history/2.1.png',
+  '../images/history/2.2.png',
+  '../images/history/2.3.png',
+  '../images/history/2.4.png',
+  '../images/history/2.5.png',
+  '../images/history/2.6.png',
+  '../images/history/3.0.png',
+  '../images/history/3.1.png',
+  '../images/history/3.3.png',
+  '../images/history/3.4.png',
+  '../images/history/4.0.png',
+  '../images/history/4.1.png',
+  '../images/history/4.2.png',
+  '../images/history/4.3.png',
+  '../images/history/5.0.png',
+  '../images/history/5.1.png',
+  '../images/history/5.2.png',
+  '../images/history/5.3.png',
+  '../images/history/5.4.png',
 ]
 
 export default function GalleryCarousel() {
@@ -46,7 +76,7 @@ export default function GalleryCarousel() {
             <img
               src={image}
               alt="Foto casal"
-              className="w-full h-full object-cover"
+              className="w-full h-full"
             />
 
           </div>

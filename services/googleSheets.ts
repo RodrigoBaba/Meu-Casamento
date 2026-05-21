@@ -1,6 +1,7 @@
 export async function enviarRSVP(dados: {
   nome: string
   acompanhantes: string
+  nomesAcompanhantes: string
 }) {
 
   const response = await fetch(

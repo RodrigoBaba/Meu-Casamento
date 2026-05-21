@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import GalleryCarousel from '@/components/GalleryCarousel'
+import styles from './home.module.css'
 
 export default function Home() {
 
@@ -11,33 +12,54 @@ export default function Home() {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
 
   return (
-    <main className="min-h-screen bg-rose-50 text-zinc-800">
+    <main className="min-h-screen  text-zinc-800">
+
+      {/* MONOGRAMA */}
+      <section className="flex justify-center pt-5">
+
+        <img
+          src="../images/Monograma.png"
+          alt="Monograma"
+          width={150}
+          height={150}
+          className="rounded-full object-cover border border-rose-500"
+        />
+
+      </section>
 
       {/* HERO */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
+      <section className="flex flex-col items-center justify-center text-center px-6 py-14">
 
         {/* CONTAGEM */}
-        <div className="bg-white rounded-3xl shadow-md px-10 py-6 mb-10">
-          <p className="text-sm uppercase tracking-widest text-zinc-500 mb-2">
-            Faltam
-          </p>
+        <div className={styles.countdownCard}>
+          <div className={styles.countdownContent}>
 
-          <h2 className="text-5xl font-bold text-rose-500">
-            {days}
-          </h2>
+            <h2 className={styles.countdownNumber}>
+              {days}
+            </h2>
 
-          <p className="text-zinc-600 mt-2">
-            dias para o grande dia
-          </p>
+            <p className={styles.countdownText}>
+              dias para o grande dia
+            </p>
+
+          </div>
         </div>
 
         <p className="uppercase tracking-[0.3em] text-sm text-rose-500 mb-4">
           Nosso Casamento
         </p>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Rodrigo & Isabella
-        </h1>
+        <div>
+          <h1 className="text-5xl md:text-7xl font-bold">
+            Rodrigo
+          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold">
+            &
+          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Isabella
+          </h1>
+        </div>
 
         <p className="max-w-xl text-lg text-zinc-600 mb-10">
           Estamos muito felizes em compartilhar esse momento especial com você.
