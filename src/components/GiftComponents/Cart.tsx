@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import {
   ShoppingCart,
@@ -15,6 +15,17 @@ import {
 export default function Cart() {
 
   const [isOpen, setIsOpen] = useState(false)
+
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640)
+
+    check() // roda na primeira vez
+    window.addEventListener('resize', check)
+
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const {
     cart,
@@ -118,7 +129,6 @@ export default function Cart() {
         )
       }
 
-      {/* MODAL CARRINHO */}
 
       {/* MODAL CARRINHO */}
 
@@ -127,9 +137,7 @@ export default function Cart() {
           position: 'fixed',
           top: 0,
           right: 0,
-          width: window.innerWidth < 640
-            ? '100vw'
-            : '420px',
+          width: isMobile ? '100vw' : '420px',
           height: '100vh',
           background: '#fff',
           zIndex: 9999,
