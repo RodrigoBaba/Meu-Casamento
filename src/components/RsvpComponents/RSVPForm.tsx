@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { enviarRSVP } from '@/services/googleSheets'
+import { enviarRSVP } from '@/src/services/enviarRsvp'
 import { useRouter } from 'next/navigation'
-import LoadingMonogram from '@/components/LoadingMonogram'
-import LoadingOverlay from '@/components/LoadingOverlay'
+import LoadingMonogram from '@/src/components/RsvpComponents/LoadingMonogram'
+import LoadingOverlay from '@/src/components/RsvpComponents/LoadingOverlay'
 
 export default function RSVPForm() {
 

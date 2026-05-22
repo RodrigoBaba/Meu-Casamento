@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import GalleryCarousel from '@/components/GalleryCarousel'
+import GalleryCarousel from '@/src/components/HomeComponents/GalleryCarousel'
 import styles from './home.module.css'
 
 export default function Home() {

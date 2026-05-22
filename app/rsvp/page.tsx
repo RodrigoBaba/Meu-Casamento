@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import RSVPForm from '@/components/RSVPForm'
+import RSVPForm from '@/src/components/RsvpComponents/RSVPForm'
 
 export default function RSVPPage() {
   return (
